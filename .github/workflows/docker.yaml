@@ -32,3 +32,11 @@ jobs:
           push: true
           tags: scmanjarrez/metasploit-framework:latest,scmanjarrez/metasploit-framework:${{ env.MSFV }}
           platforms: linux/amd64,linux/arm64
+  keepalive-job:
+    name: Keepalive Workflow
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: gautamkrishnar/keepalive-workflow@v2
